@@ -413,42 +413,100 @@ body.dark-mode .btn-tema {
     color: #111827;
 }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE COMPLETO INICIO --- */
 @media (max-width: 1024px) {
-    .contenido-principal {
-        flex-direction: column;
+    .container {
+        max-width: 92%;
     }
 
-    .aside-preguntas {
-        width: 100%;
-        min-height: auto;
-        position: static;
-        order: -1;
+    section {
+        padding: 32px;
     }
 }
 
 @media (max-width: 768px) {
-    .fila-media {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .img-mediana {
-        width: 100%;
-        max-width: 100%;
+    header {
+        padding: 25px 15px;
     }
 
     .header-container {
         flex-direction: column;
+        text-align: center;
+        gap: 14px;
     }
 
-    .header-texto {
+    .Logopagina {
+        width: 120px;
+    }
+
+    .header-container h1 {
+        font-size: 2rem;
         text-align: center;
+    }
+
+    .header-container p {
+        margin-left: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    nav {
+        padding: 12px 10px;
     }
 
     nav a {
         display: inline-block;
-        margin: 8px;
+        margin: 6px 8px;
+        font-size: 0.95rem;
+    }
+
+    .container {
+        margin: 25px auto;
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 24px 18px;
+        border-left-width: 6px;
+        border-radius: 12px;
+    }
+
+    section h2 {
+        font-size: 1.35rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .pretest-box,
+    .guia-box {
+        text-align: center;
+    }
+
+    .btn-pretest,
+    #btnContinuar,
+    .btn-guia {
+        width: 100%;
+        max-width: 320px;
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
+
+    .guia-box {
+        padding: 22px;
+    }
+
+    .guia-box h2 {
+        font-size: 1.25rem;
+    }
+
+    .footer {
+        padding: 20px 12px;
+    }
+
+    .footer p {
+        font-size: 0.95rem;
     }
 
     .btn-tema {
@@ -456,5 +514,40 @@ body.dark-mode .btn-tema {
         right: 10px;
         padding: 10px 14px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .header-container p {
+        font-size: 0.92rem;
+    }
+
+    section {
+        padding: 20px 14px;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    section p {
+        font-size: 0.96rem;
+    }
+
+    .btn-pretest,
+    #btnContinuar,
+    .btn-guia {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px auto;
+        width: fit-content;
     }
 }
