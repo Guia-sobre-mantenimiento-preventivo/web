@@ -464,7 +464,6 @@ body.dark-mode .btn-sugerencias:hover {
     .aside-preguntas {
         width: 100%;
         min-height: auto;
-        position: static;
         margin-bottom: 25px;
         box-sizing: border-box;
     }
