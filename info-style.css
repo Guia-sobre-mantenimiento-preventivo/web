@@ -516,6 +516,7 @@ body.dark-mode .btn-sugerencias:hover {
 
     .contenido-principal {
         margin: 20px auto;
+        flex-direction: column;
         padding: 0 10px;
     }
 
@@ -546,11 +547,12 @@ body.dark-mode .btn-sugerencias:hover {
         max-width: 100%;
     }
 
-    .aside-preguntas {
-        order: -1;
+   .aside-preguntas {
+        position: static;
         width: 100%;
-        max-width: 100%;
-        padding: 18px;
+        order: -1;
+        top: auto;
+        min-height: auto;
     }
 
     .aside-preguntas h3 {
