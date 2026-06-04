@@ -11,7 +11,14 @@ body {
 html {
     scroll-behavior: smooth;
 }
+* {
+    box-sizing: border-box;
+}
 
+html,
+body {
+    overflow-x: hidden;
+}
 header {
     background: #2980b9;
     color: white;
@@ -412,142 +419,200 @@ body.dark-mode .btn-tema {
     background: #e8edf2;
     color: #111827;
 }
+body.dark-mode .btn-video {
+    background: #c74a3b;
+}
 
-/* --- RESPONSIVE COMPLETO INICIO --- */
+body.dark-mode .btn-video:hover {
+    background: #e05a4b;
+}
+body.dark-mode .sugerencias-box {
+    background: linear-gradient(135deg, #263340, #2f4050);
+    border-left-color: #2fa56b;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.28);
+}
+
+body.dark-mode .sugerencias-box h2 {
+    color: #8dd8a8;
+}
+
+body.dark-mode .sugerencias-box p {
+    color: #e8edf2;
+}
+
+body.dark-mode .btn-sugerencias {
+    background: #2fa56b;
+}
+
+body.dark-mode .btn-sugerencias:hover {
+    background: #248a58;
+}
+/* --- RESPONSIVE--- */
+
 @media (max-width: 1024px) {
-    .container {
-        max-width: 92%;
+
+    .contenido-principal {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 15px;
     }
 
-    section {
-        padding: 32px;
+    .container {
+        max-width: 100%;
+    }
+
+    .aside-preguntas {
+        width: 100%;
+        min-height: auto;
+        position: static;
+        margin-bottom: 25px;
+        box-sizing: border-box;
     }
 }
 
 @media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
     header {
-        padding: 25px 15px;
+        padding: 20px 15px;
     }
 
     .header-container {
         flex-direction: column;
         text-align: center;
-        gap: 14px;
+        gap: 15px;
     }
 
-    .Logopagina {
-        width: 120px;
+    .logo-sitio {
+        width: 75px;
     }
 
-    .header-container h1 {
-        font-size: 2rem;
+    .header-texto {
         text-align: center;
     }
 
-    .header-container p {
-        margin-left: 0;
-        text-align: center;
+    .header-texto h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-texto p {
         font-size: 1rem;
-    }
-
-    nav {
-        padding: 12px 10px;
     }
 
     nav a {
         display: inline-block;
-        margin: 6px 8px;
-        font-size: 0.95rem;
+        margin: 6px;
     }
 
-    .container {
-        margin: 25px auto;
-        padding: 0 12px;
+    .contenido-principal {
+        margin: 20px auto;
+        padding: 0 10px;
     }
 
-    section {
-        padding: 24px 18px;
+    .tema-bloque {
+        margin-bottom: 25px;
         border-left-width: 6px;
-        border-radius: 12px;
     }
 
-    section h2 {
-        font-size: 1.35rem;
-    }
-
-    section p {
-        font-size: 1rem;
-    }
-
-    .pretest-box,
-    .guia-box {
-        text-align: center;
-    }
-
-    .btn-pretest,
-    #btnContinuar,
-    .btn-guia {
-        width: 100%;
-        max-width: 320px;
-        font-size: 1rem;
-        padding: 14px 20px;
-    }
-
-    .guia-box {
-        padding: 22px;
-    }
-
-    .guia-box h2 {
+    .tema-bloque h2 {
+        padding: 18px;
         font-size: 1.25rem;
     }
 
-    .footer {
-        padding: 20px 12px;
+    .tema-bloque p,
+    .tema-bloque ul {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
-    .footer p {
-        font-size: 0.95rem;
+    .fila-media {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 18px;
+    }
+
+    .img-mediana {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .aside-preguntas {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px;
+    }
+
+    .aside-preguntas h3 {
+        font-size: 1.2rem;
+    }
+
+    .aside-preguntas a {
+        padding: 12px;
+    }
+
+    .btn-video,
+    .btn-post-test,
+    .btn-sugerencias {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .post-test-box,
+    .sugerencias-box {
+        padding: 20px;
     }
 
     .btn-tema {
-        top: 10px;
-        right: 10px;
-        padding: 10px 14px;
-        font-size: 14px;
+        top: 8px;
+        right: 8px;
+        padding: 8px 12px;
+        font-size: 13px;
+        max-width: calc(100vw - 16px);
     }
 }
 
 @media (max-width: 480px) {
-    .header-container h1 {
-        font-size: 1.6rem;
+
+    .header-texto h1 {
+        font-size: 1.5rem;
     }
 
-    .header-container p {
-        font-size: 0.92rem;
-    }
-
-    section {
-        padding: 20px 14px;
-    }
-
-    section h2 {
-        font-size: 1.2rem;
-    }
-
-    section p {
-        font-size: 0.96rem;
-    }
-
-    .btn-pretest,
-    #btnContinuar,
-    .btn-guia {
-        max-width: 100%;
-        font-size: 0.95rem;
+    .header-texto p {
+        font-size: 0.9rem;
     }
 
     nav a {
         display: block;
         margin: 8px auto;
         width: fit-content;
+    }
+
+    .tema-bloque h2 {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+
+    .tema-bloque p,
+    .tema-bloque ul {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .btn-video,
+    .btn-post-test,
+    .btn-sugerencias {
+        max-width: 100%;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
     }
 }
