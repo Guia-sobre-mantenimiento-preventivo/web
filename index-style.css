@@ -307,6 +307,28 @@ body.dark-mode #btnContinuar:hover {
     background: #248a58;
 }
 
+body.dark-mode .guia-box {
+    background: linear-gradient(135deg, #263340, #2f4050);
+    color: #e8edf2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.28);
+}
+
+body.dark-mode .guia-box h2 {
+    color: #7ec0ff;
+}
+
+body.dark-mode .guia-box p {
+    color: #d5dde6;
+}
+
+body.dark-mode .btn-guia {
+    background: #4f8cc9;
+    color: white;
+}
+
+body.dark-mode .btn-guia:hover {
+    background: #3f74a8;
+}
 /* --- RESPONSIVE COMPLETO INDEX --- */
 @media (max-width: 1200px) {
     .contenido-principal {
