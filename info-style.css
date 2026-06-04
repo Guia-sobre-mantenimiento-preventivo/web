@@ -545,6 +545,7 @@ body.dark-mode .btn-sugerencias:hover {
     }
 
     .aside-preguntas {
+        order: -1;
         width: 100%;
         max-width: 100%;
         padding: 18px;
