@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Mantenimiento Preventivo</title>
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+
+<button id="tema-toggle" class="btn-tema">🌙 Tema oscuro</button>
+
+<header>
+    <div class="header-container">
+        <img src="logo web.png" alt="Logo_de_la_pagina" class="Logopagina">
+        <div>
+            <h1>Mantenimiento Preventivo</h1>
+            <p>Optimización y Cuidado de Dispositivos Móviles</p>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="#" id="linkContenido">Contenido</a>
+</nav>
+
+<main class="container">
+
+    <section>
+        <h2>Bienvenido al Portal Educativo</h2>
+        <p>
+            Este sitio ha sido desarrollado para proporcionar una guía técnica exhaustiva
+            sobre el mantenimiento preventivo de los telefonos. Aprenderás a gestionar el
+            sistema del telefono para evitar la lentitud y a cuidar sus componentes para prolongar la vida útil
+            de los mas críticos como la batería y los puertos de carga.
+        </p>
+    </section>
+
+    <section class="pretest-box">
+        <h2>Evaluación Inicial</h2>
+
+        <p>
+            Antes de comenzar con el contenido educativo, realiza este pequeño cuestionario.
+            Esto permitirá saber cuales son tus conocimientos previos sobre el mantenimiento preventivo
+            de dispositivos móviles.
+        </p>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBwhWJ10_J74vFacNFoVtJp8bcvjjeXFzafEb8Taop5R2CZA/viewform?usp=dialog"
+           target="_blank"
+           class="btn-pretest">
+            📝 Realizar Pre-Test
+        </a>
+
+        <p class="nota-pretest">
+            Luego de completar el formulario podrás continuar al contenido principal.
+        </p>
+
+        <button id="btnContinuar" disabled class="btn-continuar">
+            Continuar al contenido →
+        </button>
+    </section>
+<section class="guia-offline">
+    <div class="guia-box">
+
+        <h2>📚 Guía Completa en PDF</h2>
+
+        <p>
+            Sabemos que no todas las personas cuentan con acceso constante a Internet.
+            Por ello, hemos preparado una versión en PDF de esta capacitación para que
+            puedas descargarla una sola vez y consultarla cuando lo necesites.
+        </p>
+
+        <p>
+            El documento incluye todos los temas explicados en esta página:
+            limpieza del dispositivo, cuidado de la batería, actualizaciones,
+            optimización del rendimiento y recomendaciones de mantenimiento preventivo.
+        </p>
+
+        <a href="https://www.mediafire.com/file/z3rdc3ww87v0tgq/Guia_Tecnologica.pdf/file"
+           target="_blank"
+           class="btn-guia">
+           Descargar Guía PDF
+        </a>
+
+    </div>
+</section>
+    <section>
+        <h2>El Objetivo</h2>
+        <p>
+            El uso de dispositivos móviles se ha convertido en una herramienta esencial para la
+            comunicación, el estudio, el trabajo y el acceso a información. Sin embargo, en la
+            comunidad Fundación Mendoza se evidenció un nivel insuficiente de conocimientos
+            sobre su uso adecuado, diagnóstico básico y mantenimiento preventivo.
+
+            Esta situación genera fallas frecuentes, gastos innecesarios en reparaciones y
+            dependencia de servicios externos.
+
+            Por ello, se propone la implementación de una página web educativa que permita
+            capacitar a los habitantes, promoviendo la autonomía tecnológica y el uso responsable
+            de sus dispositivos móviles.
+        </p>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>2026 proyecto de capacitación tecnológica de la comunidad fundación mendoza</p>
+    <p>realizado por el equipo de investigación de la UPTOS:</p>
+    <p>Angel Vallera </p>
+    <p>Alexander Suarez </p>
+    <p>Pedro Rivero </p>
+    <p>Diego Vargas </p>
+</footer>
+
+<script>
+const boton = document.getElementById("btnContinuar");
+const linkContenido = document.getElementById("linkContenido");
+const botonTema = document.getElementById("tema-toggle");
+
+const PRETEST_KEY = "pretest_completado";
+
+if (localStorage.getItem(PRETEST_KEY) === "1") {
+    boton.disabled = false;
+}
+
+setTimeout(() => {
+    boton.disabled = false;
+}, 15000);
+
+boton.addEventListener("click", () => {
+    localStorage.setItem(PRETEST_KEY, "1");
+    window.location.href = "info.html";
+});
+
+linkContenido.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    if (localStorage.getItem(PRETEST_KEY) === "1") {
+        window.location.href = "info.html";
+    } else {
+        alert("Primero realiza el Pre-test para acceder al contenido.");
+    }
+});
+
+if (localStorage.getItem("tema") === "oscuro") {
+    document.body.classList.add("dark-mode");
+    botonTema.textContent = "☀️ Tema claro";
+}
+
+botonTema.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("tema", "oscuro");
+        botonTema.textContent = "☀️ Tema claro";
+    } else {
+        localStorage.setItem("tema", "claro");
+        botonTema.textContent = "🌙 Tema oscuro";
+    }
+});
+</script>
+
+</body>
+</html>
